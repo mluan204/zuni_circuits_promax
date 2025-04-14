@@ -1,0 +1,20 @@
+{
+  "name": "Do Nguyen Phuong",
+  "dateOfBirth": {
+    "day": "12",
+    "month": "11",
+    "year": "2003"
+  },
+  "school": "Truong dai hoc CNTT",
+  "yearGraduation": "2026",
+  "major": "CNTT",
+  "classification": "Very good",
+  "modeOfStudy": "Chinh quy",
+  "serialNumber": "00324431",
+  "referenceNumber": "178/QĐ_ĐHCNTT",
+  "dateOfIssue": {
+    "day": "10",
+    "month": "11",
+    "year": "2027"
+  }
+}
