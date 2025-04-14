@@ -1,4 +1,4 @@
-# ZUni zkSNARKs Proof System
+# ZUni zkSNARKs PROMAX
 
 Tải file pot16.ptau, [pot16.ptau](https://storage.googleapis.com/zkevm/ptau/powersOfTau28_hez_final_16.ptau).
 
@@ -35,8 +35,9 @@ snarkjs zkey export solidityverifier outputs/zuni_final.zkey contracts/Verifier.
 ```
 
 ## ⚠️ Lưu ý:
-Deploy smart contract RegistryDID.sol && Verifier.sol trước
-Sau khi deploy 2 contract trên thì deploy contract VerificatioCenter.sol với đầu vào là address của hai contract trên
+Deploy smart contract RegistryDID.sol && Verifier.sol trước.
+
+Sau khi deploy 2 contract trên thì deploy contract VerificatioCenter.sol với đầu vào là address của hai contract trên.
 
 
 # Một số lệnh khác
@@ -47,7 +48,7 @@ node outputs/zuni_js/generate_witness.js outputs/zuni_js/zuni.wasm inputs/input.
 
 ##  Tạo proof và public signal
 ```sh
-snarkjs groth16 fullprove inputs/zuni.json outputs/zuni_js/zuni.wasm outputs/zuni_final.zkey outputs/proof.json outputs/public.json
+snarkjs groth16 fullprove inputs/input.json outputs/zuni_js/zuni.wasm outputs/zuni_final.zkey outputs/proof.json outputs/public.json
 ```
 
 ##  Xác minh proof
