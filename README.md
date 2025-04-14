@@ -15,7 +15,7 @@ circom --r1cs --wasm --c --sym --inspect circuits/zuni.circom -o outputs
 
 ## Tạo proving key và verifying key
 ```sh
-snarkjs groth16 setup outputs/zuni.r1cs outputs/pot16.ptau outputs/zuni_final.zkey
+snarkjs groth16 setup outputs/zuni.r1cs pot16.ptau outputs/zuni_final.zkey
 snarkjs zkey export verificationkey outputs/zuni_final.zkey outputs/verification_key.json
 ```
 
@@ -24,9 +24,24 @@ snarkjs zkey export verificationkey outputs/zuni_final.zkey outputs/verification
 node scripts/addInput.js
 ```
 
+## Tạo proof và major cho contract VerificationCenter.sol
+```sh
+node scripts/generateProof.js
+```
+
+## Tạo contract Verifier.sol
+```sh
+snarkjs zkey export solidityverifier outputs/zuni_final.zkey contracts/Verifier.sol
+```
+
+## Deploy smart contract RegistryDID.sol && Verifier.sol trước
+## Sau khi deploy 2 contract trên thì deploy contract VerificatioCenter.sol với đầu vào là address của hai contract trên
+
+
+# Một số lệnh khác
 ## Tính witness
 ```sh
-node outputs/zuni_js/generate_witness.js outputs/zuni_js/zuni.wasm inputs/zuni.json outputs/witness.wtns
+node outputs/zuni_js/generate_witness.js outputs/zuni_js/zuni.wasm inputs/input.json outputs/witness.wtns
 ```
 
 ##  Tạo proof và public signal

@@ -35,9 +35,9 @@ logs/
 # *.lcov
 
 # # Blockchain specific
-# *.r1cs
-# *.zkey
-# *.ptau
-# *.wasm
-# *.json
-# *.bin
+*.r1cs
+*.zkey
+*.ptau
+*.wasm
+*.json
+*.bin
