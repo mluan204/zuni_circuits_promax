@@ -1,3 +1,4 @@
+Download [pot16.ptau](https://storage.googleapis.com/zkevm/ptau/powersOfTau28_hez_final_16.ptau).
 Biên dịch file: circom --r1cs --wasm --c --sym --inspect circuits/zuni.circom -o outputs
 
 
