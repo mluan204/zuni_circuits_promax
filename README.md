@@ -34,8 +34,9 @@ node scripts/generateProof.js
 snarkjs zkey export solidityverifier outputs/zuni_final.zkey contracts/Verifier.sol
 ```
 
-## Deploy smart contract RegistryDID.sol && Verifier.sol trước
-## Sau khi deploy 2 contract trên thì deploy contract VerificatioCenter.sol với đầu vào là address của hai contract trên
+## ⚠️ Lưu ý:
+Deploy smart contract RegistryDID.sol && Verifier.sol trước
+Sau khi deploy 2 contract trên thì deploy contract VerificatioCenter.sol với đầu vào là address của hai contract trên
 
 
 # Một số lệnh khác
