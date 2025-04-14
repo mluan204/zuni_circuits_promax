@@ -39,6 +39,10 @@ Deploy smart contract RegistryDID.sol && Verifier.sol trước.
 
 Sau khi deploy 2 contract trên thì deploy contract VerificatioCenter.sol với đầu vào là address của hai contract trên.
 
+## Sinh cặp khóa private key và public key
+```sh
+node scripts/generateKey.js
+```
 
 # Một số lệnh khác
 ## Tính witness
