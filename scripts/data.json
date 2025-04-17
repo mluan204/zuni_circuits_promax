@@ -1,15 +1,15 @@
 {
-  "name": "Do Nguyen Phuong",
+  "name": "Đỗ Nguyên Phương",
   "dateOfBirth": {
     "day": "12",
     "month": "11",
     "year": "2003"
   },
-  "school": "Truong dai hoc CNTT",
+  "schoolCode": "UIT",
   "yearGraduation": "2026",
-  "major": "CNTT",
+  "major": "Information technology",
   "classification": "Very good",
-  "modeOfStudy": "Chinh quy",
+  "modeOfStudy": "Full-time",
   "serialNumber": "00324431",
   "referenceNumber": "178/QĐ_ĐHCNTT",
   "dateOfIssue": {

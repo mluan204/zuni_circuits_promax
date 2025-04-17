@@ -1,13 +1,13 @@
 const byteLengthOfData = {
-  name: 31,
+  name: 44,
   dateOfBirth: {
     day: 2,
     month: 2,
     year: 4,
   },
-  school: 31,
+  schoolCode: 5,
   yearGraduation: 4,
-  major: 31,
+  major: 44,
   classification: 16,
   modeOfStudy: 16,
   serialNumber: 16,
