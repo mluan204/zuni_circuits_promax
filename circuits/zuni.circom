@@ -7,11 +7,11 @@ template ZUni() {
     signal input r8Partials[2];
     signal input sPartials[2];
     
-    signal input name;              // 31 bytes
+    signal input name;              // 44 bytes
     signal input dateOfBirth[3];    // [day, month, year] | [2, 2, 4] bytes
-    signal input school;            // 31 bytes
+    signal input schoolCode;            //  5 bytes
     signal input yearGraduation;    //  4 bytes
-    signal input major;             // 31 bytes
+    signal input major;             // 44 bytes
     signal input classification;    // 16 bytes
     signal input modeOfStudy;       // 16 bytes
     signal input serialNumber;      // 16 bytes
@@ -20,13 +20,13 @@ template ZUni() {
 
     var byteToBits = 8;
 
-    var nameBitsLength              = 31 * byteToBits;
+    var nameBitsLength              = 44 * byteToBits;
     var dayOfBirthBitsLength        =  2 * byteToBits;
     var monthOfBirthBitsLength      =  2 * byteToBits;
     var yearOfBirthBitsLength       =  4 * byteToBits;
-    var schoolBitsLength            = 31 * byteToBits;
+    var schoolCodeBitsLength        =  5 * byteToBits;
     var yearGraduationBitsLength    =  4 * byteToBits;
-    var majorBitsLength             = 31 * byteToBits;
+    var majorBitsLength             = 44 * byteToBits;
     var classificationBitsLength    = 16 * byteToBits;
     var modeOfStudyBitsLength       = 16 * byteToBits;
     var serialNumberBitsLength      = 16 * byteToBits;
@@ -35,7 +35,7 @@ template ZUni() {
     var monthOfIssueBitsLength      =  2 * byteToBits;
     var yearOfIssueBitsLength       =  4 * byteToBits;
 
-    var totalBitsLength = nameBitsLength + dayOfBirthBitsLength + monthOfBirthBitsLength + yearOfBirthBitsLength + schoolBitsLength + yearGraduationBitsLength + majorBitsLength + classificationBitsLength + modeOfStudyBitsLength + serialNumberBitsLength + referenceNumberBitsLength + dayOfIssueBitsLength + monthOfIssueBitsLength + yearOfIssueBitsLength;
+    var totalBitsLength = nameBitsLength + dayOfBirthBitsLength + monthOfBirthBitsLength + yearOfBirthBitsLength + schoolCodeBitsLength + yearGraduationBitsLength + majorBitsLength + classificationBitsLength + modeOfStudyBitsLength + serialNumberBitsLength + referenceNumberBitsLength + dayOfIssueBitsLength + monthOfIssueBitsLength + yearOfIssueBitsLength;
 
     component eddsaVerifier = EdDSAVerifier(totalBitsLength);
     component pubKeyPartialsBits[2];
@@ -67,7 +67,7 @@ template ZUni() {
     component dayOfBirthBits        = Num2Bits(dayOfBirthBitsLength);    
     component monthOfBirthBits      = Num2Bits(monthOfBirthBitsLength);
     component yearOfBirthBits       = Num2Bits(yearOfBirthBitsLength);
-    component schoolBits            = Num2Bits(schoolBitsLength);
+    component schoolCodeBits            = Num2Bits(schoolCodeBitsLength);
     component yearGraduationBits    = Num2Bits(yearGraduationBitsLength);
     component majorBits             = Num2Bits(majorBitsLength);
     component classificationBits    = Num2Bits(classificationBitsLength);
@@ -108,12 +108,12 @@ template ZUni() {
     }
     previousLength += yearOfBirthBitsLength;
 
-    // school
-    schoolBits.in <== school;
-    for (var i = 0; i < schoolBitsLength; i++) {
-        eddsaVerifier.msg[i + previousLength] <== schoolBits.out[i];
+    // schoolCode
+    schoolCodeBits.in <== schoolCode;
+    for (var i = 0; i < schoolCodeBitsLength; i++) {
+        eddsaVerifier.msg[i + previousLength] <== schoolCodeBits.out[i];
     }
-    previousLength += schoolBitsLength;
+    previousLength += schoolCodeBitsLength;
 
     // yearGraduation
     yearGraduationBits.in <== yearGraduation;
